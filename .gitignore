@@ -3,4 +3,7 @@
 crash-reports/*
 dynmap/*
 logs/*
+sandbox/playerdata/*
+sandbox/stats/*
 run-minecraft.sh
+usercache.json
