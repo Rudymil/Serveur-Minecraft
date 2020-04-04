@@ -1,0 +1,10 @@
+
+*.log
+
+*.log.gz
+
+crash-reports/*
+
+dynmap/*
+
+logs/*
