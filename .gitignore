@@ -6,4 +6,9 @@ logs/*
 sandbox/playerdata/*
 sandbox/stats/*
 run-minecraft.sh
+banned-ips.json
+banned-players.json
+ops.json
 usercache.json
+usernamecache.json
+whitelist.json
