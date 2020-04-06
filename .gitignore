@@ -1,5 +1,6 @@
 *.log
 *.log.gz
+config/*
 crash-reports/*
 dynmap/*
 logs/*
