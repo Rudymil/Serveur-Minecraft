@@ -11,8 +11,6 @@ sandbox_the_end/advancements/*
 sandbox_the_end/playerdata/*
 sandbox_the_end/stats/*
 plugins/*
-run-minecraft.sh
-minecraft_server.1.15.2.bat
 spigot-1.15.2.bat
 banned-ips.json
 banned-players.json
@@ -25,3 +23,4 @@ commands.yml
 help.yml
 permissions.yml
 spigot.yml
+wepif.yml
