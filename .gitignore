@@ -1,3 +1,4 @@
+*.bat
 *.log
 *.log.gz
 banned-ips.json
@@ -8,7 +9,11 @@ help.yml
 logs/*
 ops.json
 permissions.yml
-plugins/*
+plugins/bStats/*
+plugins/dynmap/*
+plugins/PluginMetrics/*
+plugins/WorldEdit/*
+plugins/*.jar
 sandbox/advancements/*
 sandbox/datapacks/bukkit/pack.mcmeta
 sandbox/playerdata/*
@@ -19,9 +24,10 @@ sandbox_nether/stats/*
 sandbox_the_end/advancements/*
 sandbox_the_end/playerdata/*
 sandbox_the_end/stats/*
-spigot-1.15.2.bat
 spigot.yml
 usercache.json
 usernamecache.json
 wepif.yml
 whitelist.json
+!plugins/dynmap/*.txt
+!plugins/dynmap/templates
