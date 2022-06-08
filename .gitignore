@@ -3,6 +3,7 @@
 *.log.gz
 banned-ips.json
 banned-players.json
+bundler/*
 bukkit.yml
 commands.yml
 help.yml
