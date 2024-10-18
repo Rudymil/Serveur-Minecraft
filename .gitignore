@@ -2,6 +2,8 @@
 /logs
 /plugins
 /sandbox
+/sandbox_nether
+/sandbox_the_end
 banned-ips.json
 banned-players.json
 bukkit.yml
@@ -14,7 +16,3 @@ spigot.yml
 usercache.json
 wepif.yml
 whitelist.json
-!plugins/FastChunkPregenerator/configuration.yml
-!plugins/dynmap/*.txt
-!plugins/dynmap/templates
-!sandbox/region/*.mca
