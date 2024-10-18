@@ -32,3 +32,4 @@ wepif.yml
 whitelist.json
 !plugins/dynmap/*.txt
 !plugins/dynmap/templates
+/crash-reports
