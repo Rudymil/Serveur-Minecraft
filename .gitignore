@@ -16,3 +16,4 @@ spigot.yml
 usercache.json
 wepif.yml
 whitelist.json
+*.log
