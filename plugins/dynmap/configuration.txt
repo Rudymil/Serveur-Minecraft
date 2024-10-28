@@ -35,6 +35,10 @@ storage:
   #prefix: ""
 
 components:
+
+  - class: org.dynmap.ClientComponent
+    type: regiongrid
+
   - class: org.dynmap.ClientConfigurationComponent
   
   - class: org.dynmap.InternalClientUpdateComponent
@@ -174,6 +178,7 @@ components:
     label: "Coordonnées"
     hidey: false
     show-mcr: true
+    show-chunk: true
     
   # Note: more than one logo component can be defined
   #- class: org.dynmap.ClientComponent
