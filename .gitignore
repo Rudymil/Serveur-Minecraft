@@ -1,4 +1,6 @@
 /bundler
+/cache
+/libraries
 /logs
 /plugins
 /sandbox
