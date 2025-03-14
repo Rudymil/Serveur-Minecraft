@@ -99,7 +99,7 @@ components:
   #  hidenames: false
    
   - class: org.dynmap.SimpleWebChatComponent
-    allowchat: true
+    allowchat: false
     # If true, web UI users can supply name for chat using 'playername' URL parameter.  'trustclientname' must also be set true.
     allowurlname: false
   

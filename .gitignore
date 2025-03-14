@@ -19,3 +19,4 @@ usercache.json
 wepif.yml
 whitelist.json
 *.log
+*.code-workspace
