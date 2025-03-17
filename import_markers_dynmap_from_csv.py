@@ -66,7 +66,28 @@ else:
                 (-2496 <= x <= -1536 and -3072 <= z <= -3584)
             ):
                 structure_type = row['structureType']
-                structure_type_plural = p.plural(structure_type)  # Convertir en pluriel avec accord grammatical
+
+                # Spliter la chaîne et appliquer le pluriel avec les nouveaux critères
+                structure_type_parts = structure_type.split(' ')
+                structure_type_plural = []
+                for i, part in enumerate(structure_type_parts):
+                    if part == "Mine":  # Règle spécifique pour "Mine"
+                        structure_type_plural.append("Mines")
+                    elif i >= 2:  # À partir du troisième morceau
+                        if len(structure_type_parts[i - 1]) >= 3 and part[-1] not in ['s', 'x']:  # Vérifier la longueur du mot précédent et la dernière lettre
+                            structure_type_plural.append(p.plural(part))
+                        else:
+                            structure_type_plural.append(part)
+                    else:
+                        # Appliquer le pluriel selon les critères initiaux
+                        if len(part) > 3 and '(' not in part and ')' not in part and part[-1] not in ['s', 'x']:
+                            structure_type_plural.append(p.plural(part))
+                        else:
+                            structure_type_plural.append(part)
+
+                # Reconstruire la chaîne
+                structure_type_plural = ' '.join(structure_type_plural)
+
                 marker_id = f"marker_{index}"
                 label_id = f"{structure_type} {index}"
 
