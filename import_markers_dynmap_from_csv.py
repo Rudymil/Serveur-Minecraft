@@ -10,15 +10,6 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "pyyaml"])
     import yaml
 
-try:
-    import inflect
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "inflect"])
-    import inflect
-
-# Initialiser l'objet inflect pour gérer les pluriels
-p = inflect.engine()
-
 # Chemin relatif du fichier CSV
 csv_file_path = os.path.join('..', 'cubiomes', 'build', 'export_markers_dynmap.csv')
 
@@ -63,25 +54,23 @@ else:
             if not (
                 (-512 <= x <= 512 and 0 <= z <= 1024) or
                 (-1024 <= x <= -512 and 512 <= z <= 1024) or
-                (-2496 <= x <= -1536 and -3072 <= z <= -3584)
+                (-2496 <= x <= -1536 and -3584 <= z <= -3072)
             ):
                 structure_type = row['structureType']
 
-                # Spliter la chaîne et appliquer le pluriel avec les nouveaux critères
+                # Spliter la chaîne et appliquer le pluriel avec des critères
                 structure_type_parts = structure_type.split(' ')
                 structure_type_plural = []
                 for i, part in enumerate(structure_type_parts):
-                    if part == "Mine":  # Règle spécifique pour "Mine"
-                        structure_type_plural.append("Mines")
-                    elif i >= 2:  # À partir du troisième morceau
-                        if len(structure_type_parts[i - 1]) >= 3 and part[-1] not in ['s', 'x']:  # Vérifier la longueur du mot précédent et la dernière lettre
-                            structure_type_plural.append(p.plural(part))
+                    if i >= 2:  # À partir du troisième morceau
+                        if len(structure_type_parts[i - 1]) >= 3 and '(' not in part and ')' not in part and part[-1] not in ['s', 'x']:  # Vérifier la longueur du mot précédent et la dernière lettre
+                            structure_type_plural.append(part + 's')  # Ajouter un 's' à la fin
                         else:
                             structure_type_plural.append(part)
                     else:
                         # Appliquer le pluriel selon les critères initiaux
                         if len(part) > 3 and '(' not in part and ')' not in part and part[-1] not in ['s', 'x']:
-                            structure_type_plural.append(p.plural(part))
+                            structure_type_plural.append(part + 's')  # Ajouter un 's' à la fin
                         else:
                             structure_type_plural.append(part)
 
