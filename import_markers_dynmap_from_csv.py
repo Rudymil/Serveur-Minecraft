@@ -62,7 +62,8 @@ else:
             # Vérifier si les coordonnées sont en dehors des BBOX spécifiées
             if not (
                 (-512 <= x <= 512 and 0 <= z <= 1024) or
-                (-1024 <= x <= -512 and 512 <= z <= 1024)
+                (-1024 <= x <= -512 and 512 <= z <= 1024) or
+                (-2560 <= x <= -1536 and -3072 <= z <= -3584)
             ):
                 structure_type = row['structureType']
                 structure_type_plural = p.plural(structure_type)  # Convertir en pluriel avec accord grammatical
